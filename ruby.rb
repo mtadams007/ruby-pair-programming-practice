@@ -1,6 +1,6 @@
 # arr = [1,2,3,"a word"]
 # arr[0]
-# arr.push(crap)
+# arr.push(stuff)
 # arr.delete_at(1) or arr.delete(2)
 # arr[arr.index(3)] = 'whatev'
 # arr[3] = "watev"
@@ -84,14 +84,14 @@
 #   puts "congratulations!!!,   It took you #{i} guesses"
 # end
 # guessgame()
-
+#
 # def transmogrifier(num1, num2, num3)
 #   result = (num1 + num2) * num3
 #   puts result
 # end
 #
 # transmogrifier(10,20,5)
-
+#
 # def introduce(str1,str2)
 #   puts "#{str1}, meet #{str2}"
 # end
@@ -161,7 +161,7 @@
 # end
 #
 # string_info("Hi guys, you are the best")
-
+#
 # def mult_five?(num)
 #   if num%5 == 0
 #     p true
@@ -183,36 +183,77 @@
 #     puts "Your number is not divisible by 5. :("
 #   end
 # end
+#
+# def add(num1, num2)
+#   p num1  + num2
+# end
+#
+# def subtract(num1,num2)
+#   p num1 - num2
+# end
+#  def mult(num1,num2)
+#    p num1 * num2
+#  end
+#
+#  def divide(num1,num2)
+#    p num1 / num2
+#  end
+#
+#  puts "what do you want to do???"
+#  op = gets.chomp
+#  puts "give me a number!"
+#  number1 = gets.chomp.to_i
+#  puts "give me another number"
+#  number2 = gets.chomp.to_i
+#
+#  if op == "add"
+#    add(number1,number2)
+#  elsif op == "subtract"
+#    subtract(number1,number2)
+#  elsif op == "mult"
+#    mult(number1,number2)
+#  else
+#    divide(number1,number2)
+#  end
 
-def add(num1, num2)
-  p num1  + num2
+
+def computer_picks_num()
+  puts "enter a positive number"
+  num = gets.chomp.to_i
+  random_number = 1 + rand(num)
+  return random_number
 end
 
-def subtract(num1,num2)
-  p num1 - num2
+def player_guess()
+  puts "guess a number!"
+  guess = gets.chomp.to_i
+  return guess
 end
- def mult(num1,num2)
-   p num1 * num2
- end
 
- def divide(num1,num2)
-   p num1 / num2
- end
+def evaluate_guess(rando)
+  answer = false
+  i = 0
+  while answer == false
+    guess = player_guess()
+    warmSmall=rando*0.1
+    if guess == rando
+      i += 1
+      answer = true
+      puts "Right answer! It took you #{i} guesses"
+    elsif guess < rando && rando - guess <= warmSmall
+      i+=1
+      puts "Higherrrr!!! But you're warm!"
+    elsif guess < rando
+      i+=1
+      puts "Higherrrr!!!"
+    elsif guess > rando && guess - rando <= warmSmall
+      i+=1
+      puts "lower But you're warm!"
+    elsif guess > rando
+      i+=1
+      puts "lower"
+    end
+  end
+end
 
- puts "what do you want to do???"
- op = gets.chomp
- puts "give me a number!"
- number1 = gets.chomp.to_i
- puts "give me another number"
- number2 = gets.chomp.to_i
-
- if op == "add"
-   add(number1,number2)
- elsif op == "subtract"
-   subtract(number1,number2)
- elsif op == "mult"
-   mult(number1,number2)
- else
-   divide(number1,number2)
- end
- 
+evaluate_guess(computer_picks_num())
