@@ -92,49 +92,72 @@
 #
 # transmogrifier(10,20,5)
 
-def introduce(str1,str2)
-  puts "#{str1}, meet #{str2}"
-end
+# def introduce(str1,str2)
+#   puts "#{str1}, meet #{str2}"
+# end
+#
+# introduce("Mike", "Jamie")
+#
+# def shout(str)
+#   puts str.upcase
+# end
+#
+# shout("howdy partner")
+#
+# def chopped(arr)
+#   arr.pop
+#   p arr
+# end
+# chopped([1,2,23,3])
+#
+# def how_big(str)
+#   if str.length < 3
+#     puts "SMALL"
+#   elsif str.length <= 5
+#     puts "Medium"
+#   else
+#     puts "big"
+#   end
+# end
+#
+# how_big("It")
+#
+# def weatherman(condition, temp)
+#   if condition == "rainy" && temp == "cold"
+#     puts "Better stay inside!!!"
+#   elsif condition == "rainy" && temp == "hot"
+#     puts "sounds like a gross combo"
+#   elsif condition == "sunny"  && temp == "hot"
+#     puts "go swimmmm"
+#   elsif condition == "windy" && temp == "cold"
+#     puts "bundle up sooon!"
+#   elsif condition == "windy" && temp == "hot"
+#     puts "tornado warning!"
+#   else
+#     puts "what strange weather we're having"
+#   end
+# end
+# weatherman("rainy","hot")
 
-introduce("Mike", "Jamie")
-
-def shout(str)
-  puts str.upcase
-end
-
-shout("howdy partner")
-
-def chopped(arr)
-  arr.pop
-  p arr
-end
-chopped([1,2,23,3])
-
-def how_big(str)
-  if str.length < 3
-    puts "SMALL"
-  elsif str.length <= 5
-    puts "Medium"
+def meaning_of_life()
+  puts "Do you want to know the meaning of life?! For yes enter y, for no enter n."
+  input = gets.chomp
+  if input == "y"
+    p 42
   else
-    puts "big"
+    puts "You suck. :("
   end
 end
 
-how_big("It")
+meaning_of_life()
 
-def weatherman(condition, temp)
-  if condition == "rainy" && temp == "cold"
-    puts "Better stay inside!!!"
-  elsif condition == "rainy" && temp == "hot"
-    puts "sounds like a gross combo"
-  elsif condition == "sunny"  && temp == "hot"
-    puts "go swimmmm"
-  elsif condition == "windy" && temp == "cold"
-    puts "bundle up sooon!"
-  elsif condition == "windy" && temp == "hot"
-    puts "tornado warning!"
-  else
-    puts "what strange weather we're having"
-  end
-  weatherman("rainy","hot")
-  
+def string_info(str)
+  my_str = {
+  original: str,
+  length: str.length,
+  snaked: str.downcase.tr!(' ', '_')
+}
+p my_str
+end
+
+string_info("Hi guys, you are the best")
