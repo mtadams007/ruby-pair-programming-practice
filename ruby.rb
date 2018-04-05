@@ -138,26 +138,81 @@
 #   end
 # end
 # weatherman("rainy","hot")
+#
+# def meaning_of_life()
+#   puts "Do you want to know the meaning of life?! For yes enter y, for no enter n."
+#   input = gets.chomp
+#   if input == "y"
+#     p 42
+#   else
+#     puts "You suck. :("
+#   end
+# end
+#
+# meaning_of_life()
+#
+# def string_info(str)
+#   my_str = {
+#   original: str,
+#   length: str.length,
+#   snaked: str.downcase.tr!(' ', '_')
+# }
+# p my_str
+# end
+#
+# string_info("Hi guys, you are the best")
 
-def meaning_of_life()
-  puts "Do you want to know the meaning of life?! For yes enter y, for no enter n."
-  input = gets.chomp
-  if input == "y"
-    p 42
-  else
-    puts "You suck. :("
-  end
+# def mult_five?(num)
+#   if num%5 == 0
+#     p true
+#   else
+#     p false
+#   end
+# end
+#
+# input =''
+# while input != "quit"
+#   puts "Enter a number or type quit por favor"
+#   input = gets.chomp
+#   input1 = input.to_i
+#   if input == "quit"
+#     puts "sorry to see you go"
+#   elsif mult_five?(input1) == true
+#     puts "Your number is divisible by 5!!!!!!"
+#   else
+#     puts "Your number is not divisible by 5. :("
+#   end
+# end
+
+def add(num1, num2)
+  p num1  + num2
 end
 
-meaning_of_life()
-
-def string_info(str)
-  my_str = {
-  original: str,
-  length: str.length,
-  snaked: str.downcase.tr!(' ', '_')
-}
-p my_str
+def subtract(num1,num2)
+  p num1 - num2
 end
+ def mult(num1,num2)
+   p num1 * num2
+ end
 
-string_info("Hi guys, you are the best")
+ def divide(num1,num2)
+   p num1 / num2
+ end
+
+ puts "what do you want to do???"
+ op = gets.chomp
+ puts "give me a number!"
+ number1 = gets.chomp.to_i
+ puts "give me another number"
+ number2 = gets.chomp.to_i
+
+ if op == "add"
+   add(number1,number2)
+ elsif op == "subtract"
+   subtract(number1,number2)
+ elsif op == "mult"
+   mult(number1,number2)
+ else
+   divide(number1,number2)
+ end
+ 
